@@ -1,0 +1,44 @@
+.input {
+  display: block;
+}
+
+button {
+  background-color: var(--primary);
+  border: 0;
+  padding: 15px 30px;
+  color: var(--buttonColor);
+  border-radius: 4px;
+}
+
+.container {
+  width: 100%;
+  max-width: 882px;
+  margin: auto auto;
+
+  label {
+    padding-bottom: 0.5rem;
+    display: inline-block;
+  }
+
+  h1 {
+    font-size: 3rem;
+    margin: 0;
+  }
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.4);
+  z-index: 100;
+
+  app-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

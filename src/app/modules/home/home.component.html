@@ -1,0 +1,73 @@
+<div *ngIf="!isLoading" class="container">
+  <form [formGroup]="form" (submit)="save(form)" class="grid">
+    <div class="col-12">
+      <app-header *ngIf="isSubmitted" [user]="user"></app-header>
+    </div>
+    <div class="col-12">
+      <h1>Update your details</h1>
+    </div>
+    <div class="col-6">
+      <label>First name</label>
+      <input formControlName="firstName" class="input" type="text" />
+    </div>
+    <div class="col-6">
+      <label>Last name</label>
+      <input formControlName="lastName" class="input" type="text" />
+    </div>
+    <div class="col-6">
+      <label>Address line 1</label>
+      <input
+        [formControl]="$any(addressForm.controls.line1)"
+        class="input"
+        type="text"
+      />
+    </div>
+    <div class="col-6">
+      <label>Address line 2</label>
+      <input
+        [formControl]="$any(addressForm.controls.line2)"
+        class="input"
+        type="text"
+      />
+    </div>
+    <div class="col-6">
+      <label>Address line 3</label>
+      <input
+        [formControl]="$any(addressForm.controls.line3)"
+        class="input"
+        type="text"
+      />
+    </div>
+    <div class="col-6">
+      <label>City</label>
+      <input
+        [formControl]="$any(addressForm.controls.city)"
+        class="input"
+        type="text"
+      />
+    </div>
+    <div class="col-6">
+      <label>County</label>
+      <input
+        [formControl]="$any(addressForm.controls.county)"
+        class="input"
+        type="text"
+      />
+    </div>
+    <div class="col-6">
+      <label>Postcode</label>
+      <input
+        [formControl]="$any(addressForm.controls.postcode)"
+        class="input"
+        type="text"
+      />
+    </div>
+    <div class="col-12">
+      <button type="submit">Submit</button>
+    </div>
+  </form>
+</div>
+
+<div *ngIf="isLoading" class="overlay">
+  <app-spinner></app-spinner>
+</div>
